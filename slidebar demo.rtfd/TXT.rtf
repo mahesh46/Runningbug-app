@@ -1,0 +1,546 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Monaco;
+\f3\ftech\fcharset77 Symbol;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red83\green83\blue83;\red230\green90\blue33;
+\red210\green53\blue44;\red63\green63\blue63;\red135\green135\blue135;\red242\green242\blue242;\red117\green117\blue117;
+\red234\green234\blue234;\red142\green142\blue142;\red90\green41\blue20;\red237\green237\blue237;\red20\green100\blue11;
+\red2\green26\blue0;\red147\green0\blue125;\red48\green0\blue109;\red175\green8\blue21;\red154\green154\blue154;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid501\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid6}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa200
+
+\f0\fs96 \cf2 How To Add a Slide-out Sidebar Menu in Your Apps\
+\pard\pardeftab720
+
+\fs28 \cf3 july 1, 2013 by {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/author/admin/"}}{\fldrslt \cf4 simon ng}} {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/ios-programming-sidebar-navigation-menu/#comments"}}{\fldrslt \cf4 153 comments}}\
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "https://twitter.com/share"}}{\fldrslt 
+\fs32 \cf4 Tweet}}
+\fs32 \cf2 \
+\
+\
+\pard\pardeftab720\qc
+\cf5 \
+\
+\pard\pardeftab720
+
+\fs22 \cf3 17\
+\pard\pardeftab720\qc
+
+\b\fs56 \cf6 374\
+\pard\pardeftab720\qr
+
+\f1\b0\fs22 \cf6 FLARES
+\f0\fs32 \cf2 \
+\pard\pardeftab720
+\cf2 \
+\pard\pardeftab720\sa500
+\cf2 How can I create a slide-out sidebar menu in my app? This is one of the frequently asked questions we got from our readers. So this week we\'92ll show you how create a slide-out navigation menu similar to the one you find in the Facebook app.\
+For those who are unfamiliar with slide out navigation menu, {\field{\*\fldinst{HYPERLINK "http://kenyarmosh.com/ios-pattern-slide-out-navigation/"}}{\fldrslt \cf4 Ken Yarmost}} gave a good explanation and defined it as follows:\
+\pard\pardeftab720\sa500
+
+\i \cf7 Slide-out navigation consists of a panel that \'93slides out\'94 from underneath the left or the right of the main content area, revealing a vertically independent scroll view that serves as the primary navigation for the application.\
+\pard\pardeftab720\sa500
+
+\i0 \cf2 Since Facebook app introduced this {\field{\*\fldinst{HYPERLINK "http://pttrns.com/categories/36-sidebars"}}{\fldrslt \cf4 slide-out sidebar design}}, it quickly becomes a standard way to implement navigation menu. You can easily find this design pattern in most of the popular content-related apps such as Path, Mailbox, Gmail, etc.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 {{\NeXTGraphic Slideout-Navigation-Menu-Featured.jpg \width14000 \height9300 \noorient
+}¬}\pard\pardeftab720
+
+\f0\fs32 \cf2 \
+\pard\pardeftab720\sa500
+\cf2 The slide-out design pattern lets you build a navigation menu in your apps but without wasting the screen real estate. Normally, the navigation menu is hidden behind the front view. The menu can then be triggered by tapping a list button in the navigation bar. Once the menu is expanded and becomes visible, users can close it by using the list button or simply swiping left on the content area.\
+With so many free pre-built solution on GitHub, we\'92re not going to build the slide-out navigation menu from scratch. Instead, we\'92ll make use of a library called {\field{\*\fldinst{HYPERLINK "https://github.com/John-Lluch/SWRevealViewController"}}{\fldrslt \cf4 SWRevealViewController}}. Developed by John Lluch, this excellent library provides a quick and easy way to put up a slide-out navigation menu and it\'92s available for free.\
+Read on and develop a demo app together.\
+\pard\pardeftab720\sa200
+
+\fs72 \cf2 A Glance at the Demo App\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 As usual, we\'92ll build a demo app to show you how to apply the SWRevealViewController. The app is very simple but not fully functional. The primary purpose of the app is to walk you through the implementation of slide-out navigation menu. The navigation menu will work like this:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa100
+\ls1\ilvl0\cf2 {\listtext	\'95	}User triggers the menu by tapping the list button at the top-left of navigation bar.\
+{\listtext	\'95	}User can also bring up the menu by swiping right on the main content area.\
+{\listtext	\'95	}Once the menu appears, user can close it by tapping the list button again.\
+{\listtext	\'95	}User can also close the menu by dragging left on the content area.\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic Slideout-Menu-Demo-App.jpg \width10240 \height11920 \noorient
+}¬}
+\f0\fs28 \cf2 \
+Slide-out Navigation Menu\
+\pard\pardeftab720\sa200
+
+\fs72 \cf2 \cb1 Creating the Xcode Project\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 With a basic idea about what we\'92ll build, let\'92s move on. You can create the Xcode project from scratch and design the user interface similar to below:\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic Sidebar-Demo-App-Storyboard.jpg \width11720 \height15580 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+Storyboard of the Demo App\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 \cb1 However, to save your time from setting up the project, you can {\field{\*\fldinst{HYPERLINK "https://dl.dropboxusercontent.com/u/2857188/SidebarDemoEmpty.zip"}}{\fldrslt \cf4 download the Xcode project template}} to start with.\
+The project already comes with:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa100
+\ls2\ilvl0\cf2 {\listtext	\'95	}A pre-built storyboard with all the view controllers needed\
+{\listtext	\'95	}A pre-built view controller classes including MapViewController and PhotoViewController\
+{\listtext	\'95	}All icons and images needed for the app (credit: thanks for the {\field{\*\fldinst{HYPERLINK "http://www.pixeden.com/media-icons/flat-design-icons-set-vol1"}}{\fldrslt \cf4 free icon from Pixeden}})\
+\pard\pardeftab720\sa200
+
+\fs72 \cf2 Importing the SWRevealViewController Library\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 As mentioned, we\'92ll use the free SWRevealViewController library to implement the slide-out menu. So, first {\field{\*\fldinst{HYPERLINK "https://github.com/John-Lluch/SWRevealViewController"}}{\fldrslt \cf4 download the library from GitHub}} and extract the zipped file.\
+After you extract the file, you should find \'93SWRevealViewController.h\'94 and \'93SWRevealViewController.m\'94. Import both files into the Xcode project and put them under \'93Library\'94.\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic Import-SWRevealViewController-in-Xcode.jpg \width12000 \height7380 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+Import SWRevealViewController into Library\
+\pard\pardeftab720\sa200
+
+\fs72 \cf2 \cb1 Associate the Front View and Rear View Controller\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 One of the beauties of the SWRevealViewController library is it provides the built-in support of Storyboard. Of course, if you prefer, you can also use Interface Builder to create the sidebar menu. But from what we know, most of you opt for Storyboard to design the user interface.\
+When implementing sidebar menu using SWRevealViewController, developers have to associate the SWRevealViewController with a front and a rear view controller using segues. The front view controller is the main controller for displaying content. In our storyboard, it\'92s the navigation controller which associates with another view controller for presenting news content. Apparently, the rear view controller is the controller for showing the navigation menu. Usually the menu is implemented by using UITableViewController.\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic SWRevealViewController-Front-Rear-View.jpg \width12000 \height10600 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+Front and Rear View of SWRevealViewController\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 \cb1 If you\'92re using our Xcode template, we\'92ve pre-built the front and rear view controllers for you. What you have to do is to define segues between the SWRevealViewController and front/rear view controller.\
+First, select the empty UIViewController and change its class to \'93SWRevealViewController\'94.\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic SWRevealViewController-in-Storyboard.jpg \width12000 \height8320 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+Changing the class to SWRevealViewController\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 \cb1 Next, press and hold the control key. Click on the SWRevealViewController and drag it to the Sidebar view controller. After releasing the button, you\'92ll see a context menu for segue selection. In this case, select \'93reveal view controller\'94. This defines a custom segue by using \'93SWRevealViewControllerSegue\'94.\
+Repeat the same procedures to connect SWRevealViewController with the navigation controller.\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic SWRevealViewController-Connects-Front-Rear-View.jpg \width11100 \height13860 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+Defining Segues for SWRevealViewController\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 \cb1 Select the segue between SWRevealViewController and the navigation controller. In the attributes inspector, set the segue identifier to \'93sw_front\'94. This is the default identifier to indicate a transition of front view controller.\
+For the segue between SWRevealViewController and the sidebar view controller, set the segue identifier to \'93sw_rear\'94. This identifier tells SWRevealViewController that the controller represents the rear view (i.e. the sidebar menu).\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic Storyboard-Segue-sw_rear.jpg \width12000 \height6540 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+Setting the segue identifier for front and rear view controllers\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 \cb1 If you compile and run the app, you\'92ll see an app displaying the \'93News Frontpage\'94. But that\'92s it. You won\'92t see the sidebar menu when tapping the list button. We haven\'92t implemented the action method yet.\
+Open \'93MainViewController.m\'94, which is the controller class of \'93News Frontpage\'94. Add the following import statement:\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat10 \clwWidth460\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf11 \clpadt100 \clpadl100 \clpadb100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5520\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f2\fs26 \cf9 1\cell 
+\pard\intbl\itap1\pardeftab720
+\cf12 \cb13 #import "SWRevealViewController.h"\cf0 \cell \lastrow\row
+\pard\pardeftab720\sa500
+
+\f0\fs32 \cf2 \cb1 Next, add the following code in the viewDidLoad method:\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat10 \clwWidth460\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf11 \clpadt100 \clpadl100 \clpadb100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth13320\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f2\fs26 \cf9 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\cell 
+\pard\intbl\itap1\pardeftab720
+\cf0 \cb13 \'a0 \'a0 \cf14 // Change button color\cf0 \
+\'a0 \'a0 _sidebarButton.tintColor \cf15 =\cf0  \cf15 [\cf0 UIColor colorWithWhite\cf15 :\cf0 0.96f alpha\cf15 :\cf0 0.2f\cf15 ]\cf0 ;\
+\
+\'a0 \'a0 \cf14 // Set the side bar button action. When it's tapped, it'll show up the sidebar.\cf0 \
+\'a0 \'a0 _sidebarButton.target \cf15 =\cf0  self.revealViewController;\
+\'a0 \'a0 _sidebarButton.action \cf15 =\cf0  \cf16 @selector\cf15 (\cf0 revealToggle\cf15 :)\cf0 ;\
+\
+\'a0 \'a0 \cf14 // Set the gesture\cf0 \
+\'a0 \'a0 \cf15 [\cf0 self.view addGestureRecognizer\cf15 :\cf0 self.revealViewController.panGestureRecognizer\cf15 ]\cf0 ;\cell \lastrow\row
+\pard\pardeftab720\sa500
+
+\f0\fs32 \cf2 \cb1 We first change the list button color and then assign the list button with an action. The SWRevealViewController provides a \'93revealToggle:\'94 method to handle the expansion and contraction of the sidebar menu. Lastly, we also add a gesture recognizer. Not only you can use the list button to bring out the sidebar menu, user can swipe the content area to activate the sidebar.\
+Try to compile and run the app. Tap the list button and the sidebar menu will be appeared. Tap the button again to close it. You can also swipe right on the content area to open the menu.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 {{\NeXTGraphic Empty-Slide-Out-Navigation-Menu.jpg \width7260 \height14260 \noorient
+}¬}\pard\pardeftab720
+
+\f0\fs32 \cf2 \
+\pard\pardeftab720\sa500
+\cf2 Before moving on, add the same code snippet to both PhotoViewController.m and MapViewController.m.\
+\pard\pardeftab720\sa200
+
+\fs72 \cf2 Adding the Menu Items in Navigation Menu\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 With just a few lines of code, you already implement the slide-out navigation menu. Cool, right?\
+However, the menu is now empty. We\'92ll now add a few items and show you the transition from one item to another. The sidebar view controller is just a simple table view controller. For sake of simplicity, we\'92ll design the sidebar menu right in the storyboard.\
+The first table cell is defined with the title of our website. If you don\'92t like it, just change it to whatever you prefer. Just make sure you keep the cell identifier as \'93title\'94, which we\'92ll refer it in our code.\
+Okay, let\'92s add a few more menu items. To begin, select the prototype cell and change the number of prototype cells to \'938
+\f3 \uc0\u8243 
+\f0  in the attributes inspector. You should end up with a screenshot similar to below:\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic Sidebar-Menu-Prototype-Cells.jpg \width12000 \height9540 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+Changing the number of prototype cells\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 \cb1 Change the \'93APPCODA\'94 label of the second cell to \'93News\'94. Optionally, you can change the color of label to light gray and set the font to \'93Helvetica Light\'94 in the attributes inspector. Next, drag a image view object from the object library to the cell. Set the size of image view to 38\'d738 and change the image to \'93news.png\'94.\
+Next, select the cell and set the cell identifer as \'93news\'94 in the attributes inspector. You should end up with a cell similar to the below screenshot:\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic Sidebar-Menu-News-Items.jpg \width12000 \height4600 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+News cell item with news identifier\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 \cb1 Repeat the above procedures to add the following menu items:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa100
+\ls3\ilvl0\cf2 {\listtext	\'95	}Comments (set the images as comments.png and cell identifier as comments)\
+{\listtext	\'95	}Map (set the images as map.png and cell identifier as map)\
+{\listtext	\'95	}Calendar (set the images as calendar.png and cell identifier as calendar)\
+{\listtext	\'95	}Wishlist (set the images as wishlist.png and cell identifier as wishlist)\
+{\listtext	\'95	}Bookmark (set the images as bookmark.png and cell identifier as bookmark)\
+{\listtext	\'95	}Tag (set the images as tag.png and cell identifier as tag)\
+\pard\pardeftab720\sa500
+\cf2 If you\'92ve done everything correct, your menu should look like this:\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 {{\NeXTGraphic Sidebar-Menu-with-Menu-Item.jpg \width8160 \height12000 \noorient
+}¬}\pard\pardeftab720
+
+\f0\fs32 \cf2 \
+\pard\pardeftab720\sa500
+\cf2 After completing the user interface, let\'92s go back to the code. Select the \'93SidebarViewController.m\'94 and import the following header files:\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat10 \clwWidth460\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf11 \clpadt100 \clpadl100 \clpadb100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth5520\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f2\fs26 \cf9 1\
+2\cell 
+\pard\intbl\itap1\pardeftab720
+\cf12 \cb13 #import "SWRevealViewController.h"\cf0 \
+\cf12 #import "PhotoViewController.h"\cf0 \cell \lastrow\row
+\pard\pardeftab720\sa500
+
+\f0\fs32 \cf2 \cb1 Next, declare the following property to store the cell identifier of the menu items:\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat10 \clwWidth460\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf11 \clpadt100 \clpadl100 \clpadb100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth7860\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f2\fs26 \cf9 1\cell 
+\pard\intbl\itap1\pardeftab720
+\cf16 \cb13 @property\cf0  \cf15 (\cf0 nonatomic, strong\cf15 )\cf0  {\field{\*\fldinst{HYPERLINK "http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/"}}{\fldrslt \cf17 NSArray}} \cf15 *\cf0 menuItems;\cell \lastrow\row
+\pard\pardeftab720\sa500
+
+\f0\fs32 \cf2 \cb1 In the viewDidLoad method, add the following code:\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat10 \clwWidth460\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf11 \clpadt100 \clpadl100 \clpadb100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth16740\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f2\fs26 \cf9 1\
+2\
+3\
+4\
+5\cell 
+\pard\intbl\itap1\pardeftab720
+\cf0 \cb13 \'a0 \'a0 self.view.backgroundColor \cf15 =\cf0  \cf15 [\cf0 UIColor colorWithWhite\cf15 :\cf0 0.2f alpha\cf15 :\cf0 1.0f\cf15 ]\cf0 ;\
+\'a0 \'a0 self.tableView.backgroundColor \cf15 =\cf0  \cf15 [\cf0 UIColor colorWithWhite\cf15 :\cf0 0.2f alpha\cf15 :\cf0 1.0f\cf15 ]\cf0 ;\
+\'a0 \'a0 self.tableView.separatorColor \cf15 =\cf0  \cf15 [\cf0 UIColor colorWithWhite\cf15 :\cf0 0.15f alpha\cf15 :\cf0 0.2f\cf15 ]\cf0 ;\
+\'a0 \'a0 \
+\'a0 \'a0 _menuItems \cf15 =\cf0  @\cf15 [\cf18 @"title"\cf0 , \cf18 @"news"\cf0 , \cf18 @"comments"\cf0 , \cf18 @"map"\cf0 , \cf18 @"calendar"\cf0 , \cf18 @"wishlist"\cf0 , \cf18 @"bookmark"\cf0 , \cf18 @"tag"\cf15 ]\cf0 ;\cell \lastrow\row
+\pard\pardeftab720\sa500
+
+\f0\fs32 \cf2 \cb1 The above code is very straightforward. We first set the background color of the view and table view and initialize the menu item array with the values of cell identifier.\
+Then change the number of rows from 0 to [self.menuItems count]. Your code should look like this:\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat10 \clwWidth460\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf11 \clpadt100 \clpadl100 \clpadb100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth13940\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f2\fs26 \cf9 1\
+2\
+3\
+4\
+5\cell 
+\pard\intbl\itap1\pardeftab720
+\cf15 \cb13 -\cf0  \cf15 (\cf0 NSInteger\cf15 )\cf0 tableView\cf15 :(\cf0 UITableView \cf15 *)\cf0 tableView numberOfRowsInSection\cf15 :(\cf0 NSInteger\cf15 )\cf0 section\
+\cf15 \{\cf0 \
+\'a0 \'a0 \cf14 // Return the number of rows in the section.\cf0 \
+\'a0 \'a0 \cf16 return\cf0  \cf15 [\cf0 self.menuItems count\cf15 ]\cf0 ;\
+\cf15 \}\cf0 \cell \lastrow\row
+\pard\pardeftab720\sa500
+
+\f0\fs32 \cf2 \cb1 Lastly, change the \'93cellForRowAtIndexPath\'94 method to the following. The code simply gets the cell identifier of the specified table cell from the menuItems array for display.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat10 \clwWidth460\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf11 \clpadt100 \clpadl100 \clpadb100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth17680\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f2\fs26 \cf9 1\
+2\
+3\
+4\
+5\
+6\
+7\cell 
+\pard\intbl\itap1\pardeftab720
+\cf15 \cb13 -\cf0  \cf15 (\cf0 UITableViewCell \cf15 *)\cf0 tableView\cf15 :(\cf0 UITableView \cf15 *)\cf0 tableView cellForRowAtIndexPath\cf15 :({\field{\*\fldinst{HYPERLINK "http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/"}}{\fldrslt \cf17 NSIndexPath}}\cf0  \cf15 *)\cf0 indexPath\
+\cf15 \{\cf0 \
+\'a0 \'a0 {\field{\*\fldinst{HYPERLINK "http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/"}}{\fldrslt \cf17 NSString}} \cf15 *\cf0 CellIdentifier \cf15 =\cf0  \cf15 [\cf0 self.menuItems objectAtIndex\cf15 :\cf0 indexPath.row\cf15 ]\cf0 ;\
+\'a0 \'a0 UITableViewCell \cf15 *\cf0 cell \cf15 =\cf0  \cf15 [\cf0 tableView dequeueReusableCellWithIdentifier\cf15 :\cf0 CellIdentifier forIndexPath\cf15 :\cf0 indexPath\cf15 ]\cf0 ;\
+\'a0 \'a0 \
+\'a0 \'a0 \cf16 return\cf0  cell;\
+\cf15 \}\cf0 \cell \lastrow\row
+\pard\pardeftab720\sa500
+
+\f0\fs32 \cf2 \cb1 Now compile and run the app again. Tap the list button and you\'92ll find a slide-out navigation menu with a much better design.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 {{\NeXTGraphic Slideout-navigation-menu-with-better-design.jpg \width7360 \height14320 \noorient
+}¬}\pard\pardeftab720
+
+\f0\fs32 \cf2 \
+\pard\pardeftab720\sa200
+
+\fs72 \cf2 Implementing Menu Item Selection\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 You\'92ve already built a visually appealing sidebar menu. However, there is still one thing left. As of now, we haven\'92t defined any segues for the menu item. When you select any of the menu items, it won\'92t transit to the corresponding view.\
+To make the demo app simple, we\'92ll only connect the menu item with three view controllers. We think this should give a pretty good demonstration to show you how it works. Here are what we\'92re going to do:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa100
+\ls4\ilvl0\cf2 {\listtext	\'95	}Connect the \'93News\'94 cell item with the main view controller using a reveal view controller segue\
+{\listtext	\'95	}Connect the \'93Map\'94 cell with the map view controller using a reveal view controller segue\
+{\listtext	\'95	}For the rest of the menu items, they will be associated with the photo view controller using the same type of segue. But we\'92ll display different photos for different menu items.\
+\pard\pardeftab720\sa500
+\cf2 Okay, go back to storyboard. First, select the map cell. Press and hold the control key and click on the map cell. Drag to the map view controller. Select the \'93reveal view controller\'94 segue when prompted.\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic Sidebar-menu-item-connection.jpg \width12000 \height9380 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+Connecting the map item with map view controller\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 \cb1 Repeat the above procedure for the \'93News\'94 cell item, but connect it with the main view controller.\
+For the rest of menu items including comments, calendar, wishlist, bookmark and tag, connect them one by one with the photo view controller and set the segue identifier as \'93showPhoto\'94. We\'92ll use this identifier to differentiate the segue from the previous two we created.\
+\pard\pardeftab720\sa100\qc
+
+\f1\fs24 \cf0 \cb8 {{\NeXTGraphic showPhoto-segue.jpg \width10220 \height2760 \noorient
+}¬}\pard\pardeftab720\sa100\qc
+
+\f0\fs28 \cf2 \
+Defining showPhoto as the segue identifier\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 \cb1 Open the \'93SidebarViewController.m\'94, add the \'93prepareForSegue\'94 method to manage the transition.\
+
+\itap1\trowd \taflags0 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clcbpat10 \clwWidth460\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf11 \clpadt100 \clpadl100 \clpadb100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth19400\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f2\fs26 \cf9 1\
+2\
+3\
+4\
+5\
+6\
+7\
+8\
+9\
+10\
+11\
+12\
+13\
+14\
+15\
+16\
+17\
+18\
+19\
+20\
+21\
+22\
+23\
+24\
+25\
+26\
+27\cell 
+\pard\intbl\itap1\pardeftab720
+\cf15 \cb13 -\cf0  \cf15 (\cf16 void\cf15 )\cf0  prepareForSegue\cf15 :\cf0  \cf15 (\cf0 UIStoryboardSegue \cf15 *)\cf0  segue sender\cf15 :\cf0  \cf15 (\cf16 id\cf15 )\cf0  sender\
+\cf15 \{\cf0 \
+\'a0 \'a0 \cf14 // Set the title of navigation bar by using the menu items\cf0 \
+\'a0 \'a0 {\field{\*\fldinst{HYPERLINK "http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSIndexPath_Class/"}}{\fldrslt \cf17 NSIndexPath}} \cf15 *\cf0 indexPath \cf15 =\cf0  \cf15 [\cf0 self.tableView indexPathForSelectedRow\cf15 ]\cf0 ;\
+\'a0 \'a0 UINavigationController \cf15 *\cf0 destViewController \cf15 =\cf0  \cf15 (\cf0 UINavigationController\cf15 *)\cf0 segue.destinationViewController;\
+\'a0 \'a0 destViewController.title \cf15 =\cf0  \cf15 [[\cf0 _menuItems objectAtIndex\cf15 :\cf0 indexPath.row\cf15 ]\cf0  capitalizedString\cf15 ]\cf0 ;\
+\'a0 \'a0 \
+\'a0 \'a0 \cf14 // Set the photo if it navigates to the PhotoView\cf0 \
+\'a0 \'a0 \cf16 if\cf0  \cf15 ([\cf0 segue.identifier isEqualToString\cf15 :\cf18 @"showPhoto"\cf15 ])\cf0  \cf15 \{\cf0 \
+\'a0 \'a0 \'a0 \'a0 PhotoViewController \cf15 *\cf0 photoController \cf15 =\cf0  \cf15 (\cf0 PhotoViewController\cf15 *)\cf0 segue.destinationViewController;\
+\'a0 \'a0 \'a0 \'a0 {\field{\*\fldinst{HYPERLINK "http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/"}}{\fldrslt \cf17 NSString}} \cf15 *\cf0 photoFilename \cf15 =\cf0  \cf15 [{\field{\*\fldinst{HYPERLINK "http://developer.apple.com/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/"}}{\fldrslt \cf17 NSString}}\cf0  stringWithFormat\cf15 :\cf18 @"%@_photo.jpg"\cf0 , \cf15 [\cf0 _menuItems objectAtIndex\cf15 :\cf0 indexPath.row\cf15 ]]\cf0 ;\
+\'a0 \'a0 \'a0 \'a0 photoController.photoFilename \cf15 =\cf0  photoFilename;\
+\'a0 \'a0 \cf15 \}\cf0 \
+\'a0 \'a0 \
+\'a0 \'a0 \cf16 if\cf0  \cf15 (\cf0  \cf15 [\cf0 segue isKindOfClass\cf15 :\cf0  \cf15 [\cf0 SWRevealViewControllerSegue class\cf15 ]]\cf0  \cf15 )\cf0  \cf15 \{\cf0 \
+\'a0 \'a0 \'a0 \'a0 SWRevealViewControllerSegue \cf15 *\cf0 swSegue \cf15 =\cf0  \cf15 (\cf0 SWRevealViewControllerSegue\cf15 *)\cf0  segue;\
+\'a0 \'a0 \'a0 \'a0 \
+\'a0 \'a0 \'a0 \'a0 swSegue.performBlock \cf15 =\cf0  \cf15 ^(\cf0 SWRevealViewControllerSegue\cf15 *\cf0  rvc_segue, UIViewController\cf15 *\cf0  svc, UIViewController\cf15 *\cf0  dvc\cf15 )\cf0  \cf15 \{\cf0 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 UINavigationController\cf15 *\cf0  navController \cf15 =\cf0  \cf15 (\cf0 UINavigationController\cf15 *)\cf0 self.revealViewController.frontViewController;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \cf15 [\cf0 navController setViewControllers\cf15 :\cf0  @\cf15 [\cf0 dvc\cf15 ]\cf0  animated\cf15 :\cf0  \cf16 NO\cf0  \cf15 ]\cf0 ;\
+\'a0 \'a0 \'a0 \'a0 \'a0 \'a0 \cf15 [\cf0 self.revealViewController setFrontViewPosition\cf15 :\cf0  FrontViewPositionLeft animated\cf15 :\cf0  \cf16 YES\cf15 ]\cf0 ;\
+\'a0 \'a0 \'a0 \'a0 \cf15 \}\cf0 ;\
+\'a0 \'a0 \'a0 \'a0 \
+\'a0 \'a0 \cf15 \}\cf0 \
+\'a0 \'a0 \
+\cf15 \}\cf0 \cell \lastrow\row
+\pard\pardeftab720\sa500
+
+\f0\fs32 \cf2 \cb1 Let us go through the above code line by line:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa100
+\ls5\ilvl0\cf2 {\listtext	\'95	}Line 4 to 6 are used to set the title of the navigation bar. We simply use the cell identifier as title.\
+{\listtext	\'95	}Line 9 to 13 are only for those segues with \'93showPhoto\'94 identifier. The photo view controller will only display a single photo. Here we set the file name of the photo to be displayed. Say, when user taps the \'93Comments\'94 item, we\'92ll show the \'93comments_photo.jpg\'94.\
+{\listtext	\'95	}Line 15 to 25 are the code to manage the view transition and tell SWRevealViewController the new front view controller for display. We reuse the navigation controller and replace the view controller with destination view controller.\
+\pard\pardeftab720\sa200
+
+\fs72 \cf2 Compile and Test the Final App\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 Now compile and test the app again. Open the sidebar menu and tap the map item. You\'92ll be brought to the map view. Try to test other menu items and see what you get.\
+\pard\pardeftab720
+
+\f1\fs24 \cf0 {{\NeXTGraphic Sidebar-Demo-App-Map-Item.jpg \width12000 \height9880 \noorient
+}¬}\pard\pardeftab720
+
+\f0\fs32 \cf2 \
+\pard\pardeftab720\sa200
+
+\fs72 \cf2 Summary\
+\pard\pardeftab720\sa500
+
+\fs32 \cf2 In this tutorial, we show you how to apply SWRevealViewController to implement a slide-out navigation menu similar to the one in the Facebook app. If you do a search in GitHub, you can find other sidebar solutions such as {\field{\*\fldinst{HYPERLINK "https://github.com/gresrun/GHSidebarNav"}}{\fldrslt \cf4 GHSidebarNav}} and {\field{\*\fldinst{HYPERLINK "https://github.com/Inferis/ViewDeck"}}{\fldrslt \cf4 ViewDeck}}. You\'92re free to explore other libraries and see which is the best fit for your app. If you\'92d like to learn how to build the sidebar menu from scratch, Ray Wenderlich offers a {\field{\*\fldinst{HYPERLINK "http://www.raywenderlich.com/32054/how-to-create-a-slide-out-navigation-like-facebook-and-path"}}{\fldrslt \cf4 great tutorial}}.\
+For your complete reference, you can {\field{\*\fldinst{HYPERLINK "https://dl.dropboxusercontent.com/u/2857188/SidebarDemo.zip"}}{\fldrslt \cf4 download the full source code from here}}. As always, leave us comment and share your thought about the tutorial.\
+\pard\pardeftab720\sa500
+
+\b \cf2 Update:
+\b0  The Xcode project has been updated. It\'92s now compatible with Xcode 5 and iOS 7. You can {\field{\*\fldinst{HYPERLINK "https://dl.dropboxusercontent.com/u/2857188/SidebarDemo_Xcode5.zip"}}{\fldrslt \cf4 download the project from here}}.\
+\pard\pardeftab720\qc
+\cf2 \
+\pard\pardeftab720
+
+\fs24 \cf2 \
+\pard\pardeftab720\sa200
+
+\fs60 \cf2 You May Like These:\
+\pard\pardeftab720
+
+\fs32 \cf2 \
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/how-to-handle-row-selection-in-uitableview/"}}{\fldrslt \cf4 \
+\pard\pardeftab720
+\cf2 How To Handle Row Selection in UITableView\
+}}\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/improve-detail-view-controller-storyboard-segue/"}}{\fldrslt \cf4 \
+\pard\pardeftab720
+\cf2 Improve the Recipe App With a Better Detail View Controller\
+}}\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/supplementary-view-uicollectionview-flow-layout/"}}{\fldrslt \cf4 \
+\pard\pardeftab720
+\cf2 How to Add Header and Footer View in UICollectionView\
+}}\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/intro-text-kit-ios-programming-guide/"}}{\fldrslt \cf4 \
+\pard\pardeftab720
+\cf2 Using Text Kit to Manage Text in Your iOS Apps\
+}}\pard\pardeftab720
+\cf2 \
+\pard\pardeftab720
+{\field{\*\fldinst{HYPERLINK "https://twitter.com/share"}}{\fldrslt \cf4 Tweet}}\
+\
+\
+\pard\pardeftab720\qc
+\cf5 \
+\
+\pard\pardeftab720
+
+\fs22 \cf3 17\
+\pard\pardeftab720
+
+\fs28 \cf3 filed under: {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/course/"}}{\fldrslt \cf4 course}}, {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/tutorials/"}}{\fldrslt \cf4 tutorials}} tagged with: {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/tag/ios-programming/"}}{\fldrslt \cf4 ios programming}}, {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/tag/navigation-menu/"}}{\fldrslt \cf4 navigation menu}}, {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/tag/sidebar-2/"}}{\fldrslt \cf4 sidebar}}, {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/tag/swrevealviewcontroller/"}}{\fldrslt \cf4 swrevealviewcontroller}}, {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/tag/xcode/"}}{\fldrslt \cf4 xcode}}\
+\pard\pardeftab720\sa300
+
+\fs32 \cf19 \shad\shadx0\shady-20\shadr0\shado255 \shadc0 Build Your Own Game and Monetize on the Side\
+\pard\pardeftab720
+\cf1 \shad\shadx0\shady-20\shadr0\shado255 \shadc0 Learn how to develop your first iOS game and make money on the side. The starter kit will come with full source code of a memory game for both iPhone and iPad, as well as, a complete guide to explain how the code works. {\field{\*\fldinst{HYPERLINK "http://www.appcoda.com/ios-app-kit/ios-game-kit.html"}}{\fldrslt \cf4 \shad\shadx0\shady-20\shadr0\shado255 \shadc0 Check out the starter kit}} to learn more.\
+\
+\pard\pardeftab720\sa300
+\cf19 \shad\shadx0\shady-20\shadr0\shado255 \shadc0 Sign Up for our Free Tutorials\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa100
+\ls6\ilvl0\cf1 \shad0 {\listtext	\'95	}\shad\shadx0\shady-20\shadr0\shado255 \shadc0 Learn iOS Programming From Scratch\
+\ls6\ilvl0\shad0 {\listtext	\'95	}\shad\shadx0\shady-20\shadr0\shado255 \shadc0 Step by Step Guide to Build Your First iPhone App\
+\ls6\ilvl0\shad0 {\listtext	\'95	}\shad\shadx0\shady-20\shadr0\shado255 \shadc0 Complete Source Code for Your Reference\
+\ls6\ilvl0\shad0 {\listtext	\'95	}\shad\shadx0\shady-20\shadr0\shado255 \shadc0 More Programming Tips and Tutorials to Come\
+\pard\pardeftab720\sa300
+\cf19 \shad\shadx0\shady-20\shadr0\shado255 \shadc0 Whatcha waiting for?\
+\pard\pardeftab720
+\cf1 \shad\shadx0\shady-20\shadr0\shado255 \shadc0 \
+}
